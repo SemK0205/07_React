@@ -12,6 +12,12 @@ import {
 // npm install recharts
 
 function Chart() {
+  // useEffect -> 함수형 컴포넌트에서 생명주기를 다룰 수 있는 hook
+  // useEffect(()=>{
+  //   // 컴포넌트가 화면에 마운트 되었을 때, 업데이트가 일어날 때
+
+  //   return () // 클리어! chart 컴포넌트가 화면상에서 삭제될 때
+  // }, [])
   const data = [
     // 오늘기준으로 일주일(7일내)의 데이터를 얻어옴
     {
@@ -69,7 +75,7 @@ function Chart() {
     <>
       <h2>BoardProject 회원 유입/이탈 추이</h2>
       {/* 높이의 경우 100%라고 문자열로 쓰면 화면에 렌더링 불가 */}
-      <ResponsiveContainer width="100%" height={500}>
+      <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           data={data}
           margin={{
